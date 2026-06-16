@@ -22,3 +22,6 @@ __pycache__/
 *.lof
 *.lot
 *.ptc
+*.nav
+*.snm
+*.vrb
