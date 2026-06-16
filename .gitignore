@@ -1,0 +1,24 @@
+# Specify filepatterns you want git to ignore.
+.DS_Store
+~$*
++utils/+call/paths.m
+models/+**
+*.bin
+*.cod
+*.log
+checksum
+*.asv
+__pycache__/
+*.pyc
+*.html
+*.aux
+*.out
+*.toc
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.bbl
+*.blg
+*.lof
+*.lot
+*.ptc

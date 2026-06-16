@@ -1,0 +1,136 @@
+\documentclass[aspectratio=169, 11pt, t]{beamer}
+
+% --- Theme and Colors ---
+\usetheme{Boadilla}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{enumerate items}[default]
+
+\definecolor{MyBlue}{RGB}{0, 51, 102}
+\definecolor{BoxGrey}{RGB}{245, 245, 247}
+\setbeamercolor{title}{fg=MyBlue}
+\setbeamercolor{frametitle}{fg=MyBlue}
+\setbeamercolor{structure}{fg=MyBlue}
+\setbeamercolor{conclusionbox}{bg=BoxGrey, fg=black}
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{caption}
+\captionsetup{justification=raggedright,singlelinecheck=false,labelsep=colon,font=footnotesize,skip=-1pt}
+\setbeamertemplate{caption}[numbered]
+\usepackage{subcaption}
+\usepackage[normalem]{ulem}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+}
+
+% --- Figure paths ---
+\graphicspath{{./}{figures/}}
+
+% --- Placeholder box for material to be added (optional arg: box height) ---
+\newcommand{\placeholder}[2][0.52\textheight]{%
+    \begin{center}
+    \setlength{\fboxsep}{8pt}%
+    \fcolorbox{gray}{BoxGrey}{%
+        \begin{minipage}[c][#1][c]{0.95\textwidth}
+            \centering\itshape\color{gray} #2
+        \end{minipage}}%
+    \end{center}}
+
+% --- Presentation Info ---
+\title[]{Jamaica Case Study}
+\author{}
+\institute{}
+\date{\today}
+
+% --- Layout ---
+\setbeamertemplate{footline}[frame number]
+\setbeamersize{text margin left=1cm,text margin right=1cm}
+
+\begin{document}
+
+% --- Title Slide ---
+\begin{frame}[plain]
+    \titlepage
+\end{frame}
+
+% --- Slide: reallocation of expenditure (FM panel 2) ---
+\begin{frame}{Emerging Market and Developing Economies: Reallocation of Expenditure}
+    \vspace{0.3em}
+    \begin{columns}[T]
+        \begin{column}{0.49\textwidth}
+            \raggedright
+            \captionof{figure}{Gains in output at selected horizons (percent deviation from steady state)}\label{fig:reallocationEM}
+            {\centering\includegraphics[width=\textwidth]{reallocationEM_yd.png}\par}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \raggedright
+            \captionof{figure}{Gains in output over time (percent deviation from steady state)}\label{fig:reallocationEMLines}
+            {\centering\includegraphics[width=\textwidth]{reallocationEM_yd_lines.png}\par}
+        \end{column}
+    \end{columns}
+
+    \vspace{1em}
+    {\fontsize{5pt}{6pt}\selectfont
+        Sources: IMF staff estimates. \\
+        Notes: Output responses to a permanent increase, in the expenditure categories listed in the legends, of 1 percent of GDP in 2025, funded by a cut in public consumption. \\
+    }
+\end{frame}
+
+% --- Slide: spending efficiency (FM panel 4) ---
+\begin{frame}{Emerging Market and Developing Economies: Increase in Spending Efficiency}
+    \vspace{0.3em}
+    \begin{columns}[T]
+        \begin{column}{0.49\textwidth}
+            \raggedright
+            \captionof{figure}{Additional gains in output in 2050 (percent deviation from steady state)}\label{fig:efficiencyEM}
+            {\centering\includegraphics[width=\textwidth]{efficiencyEM_yd.png}\par}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \raggedright
+            \captionof{figure}{Additional gains in output over time (percent deviation from steady state)}\label{fig:efficiencyEMLines}
+            {\centering\includegraphics[width=\textwidth]{efficiencyEM_yd_lines.png}\par}
+        \end{column}
+    \end{columns}
+
+    \vspace{1em}
+    {\fontsize{5pt}{6pt}\selectfont
+        Sources: IMF staff estimates. \\
+        Notes: Additional gains in output from gradually closing gaps in spending efficiency, by 2040 and 2050, relative to the reallocation-only baseline. The left panel also shows gains from different initial efficiency levels, as described in its legend; the right panel shows the baseline case over time, with blue lines for infrastructure and purple lines for human capital investment. \\
+    }
+\end{frame}
+
+% --- Slide: reallocation and efficiency combined, EMDEs versus Jamaica ---
+\begin{frame}{Reallocation and Efficiency Combined: EMDEs and Jamaica}
+    \vspace{0.3em}
+    \begin{columns}[T]
+        \begin{column}{0.49\textwidth}
+            \raggedright
+            \captionof{figure}{Emerging market and developing economies (percent deviation from steady state)}\label{fig:combinedEM}
+            {\centering\includegraphics[width=\textwidth]{combinedEM_yd_lines.png}\par}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \raggedright
+            \captionof{figure}{Jamaica (percent deviation from steady state)}\label{fig:combinedJAM}
+            {\centering\includegraphics[width=\textwidth]{combinedJAM_yd_lines.png}\par}
+        \end{column}
+    \end{columns}
+
+    \vspace{1em}
+    {\fontsize{5pt}{6pt}\selectfont
+        Sources: IMF staff estimates. \\
+        Notes: Solid lines show output responses to a permanent reallocation of 1 percent of GDP in 2025 towards the expenditure category indicated by the color (blue: infrastructure investment; purple: human capital investment), funded by a cut in public consumption. Dashed lines show the overall effect when, in addition, the corresponding spending-efficiency gap is gradually closed by 2040. The Jamaica panel uses emerging-market parameters with Jamaica-specific efficiency gaps from IMF staff efficiency estimates (health 2023 and education 2024, averaged); the infrastructure gap uses the emerging-market average, as no Jamaica estimate is available. \\
+    }
+\end{frame}
+
+\end{document}
