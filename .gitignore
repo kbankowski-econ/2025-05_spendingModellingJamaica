@@ -3,6 +3,7 @@
 ~$*
 +utils/+call/paths.m
 models/+**
+models/*/model/json/
 *.bin
 *.cod
 *.log
