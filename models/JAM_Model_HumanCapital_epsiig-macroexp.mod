@@ -197,27 +197,27 @@ varthetaat=1.35;
 probadoptss=0.2/4;
 rhoshockchit=1;
 rho_ZZRD=0.79;
-% EM-specific calibration            (definition                                    | AE value)
+% Jamaica-specific calibration       (definition                                    | EM value)
 % production and growth
-zeta=0.2;                            % share of public capital in production         | AE: 0.054
-ZZss=1.0075;                         % steady-state gross quarterly growth           | AE: 1.004
+zeta=0.2;                            % share of public capital in production         | EM: 0.2
+ZZss=1.004;                          % steady-state gross quarterly growth           | EM: 1.0075
 % taxes and debt
-taucss=0.15;                         % steady-state consumption tax rate             | AE: 0.18
-tauwss=0.10;                         % steady-state income tax rate                  | AE: 0.25
-byss=0.6*4;                          % steady-state debt to quarterly GDP (annual x4)| AE: 1*4
+taucss=0.15;                         % steady-state consumption tax rate             | EM: 0.15
+tauwss=0.10;                         % steady-state income tax rate                  | EM: 0.10
+byss=0.75*4;                         % steady-state debt to quarterly GDP (annual x4)| EM: 0.6*4
 % public spending shares of GDP
-Igy=0.05;                            % public investment                             | AE: 0.03
-Cgy=0.14;                            % public consumption                            | AE: 0.18
-Cgey=0.02;                           % human-capital-related spending                | AE: 0.0145
-Cgrdy=0.001;                         % R&D spending                                  | AE: 0.006
+Igy=0.03;                            % public investment                             | EM: 0.05
+Cgy=0.14;                            % public consumption                            | EM: 0.14
+Cgey=0.02;                           % human-capital-related spending                | EM: 0.02
+Cgrdy=0.001;                         % R&D spending                                  | EM: 0.001
 % human capital
-alphaH=0.25;                         % elasticity of HC formation w.r.t. public HRC  | AE: 0.1
-alphaHA=0;                           % feedback of human capital to TFP              | AE: 0.05
+alphaH=0.25;                         % elasticity of HC formation w.r.t. public HRC  | EM: 0.25
+alphaHA=0;                           % feedback of human capital to TFP              | EM: 0
 % R&D and technology adoption
-eff_cgrd=0.8;                        % efficiency of public R&D spending             | AE: 1-0.41
-alphaRD=0;                           % effect of R&D on TFP                          | AE: 0.09*(1-rho_ZZRD)
-alphaSRD=0;                          % R&D elasticity                                | AE: 0.1
-rhoSADOPT=0.1;                       % adoption elasticity                           | AE: 0.8
+eff_cgrd=0.8;                        % efficiency of public R&D spending             | EM: 0.8
+alphaRD=0;                           % effect of R&D on TFP                          | EM: 0
+alphaSRD=0;                          % R&D elasticity                                | EM: 0
+rhoSADOPT=0.1;                       % adoption elasticity                           | EM: 0.1
 % Jamaica efficiency gaps, sourced from the 2025-04-14 efficiency estimates
 % ([sector]_inefficiency-scores.csv, eff_gap column):
 %   INF: no Jamaica estimate available; EM average (0.415) used instead
