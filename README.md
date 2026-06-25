@@ -9,14 +9,16 @@ charts.
 
 Ten Dynare model variants (`models/`):
 
-- **Jamaica** (EM parameters + Jamaica efficiency gaps, `JAM_efficiency.macro`):
+- **Jamaica** (`JAM_parameters.macro` + `JAM_efficiency.macro`):
   `JAM_Model_HumanCapital_{epsiig, epsicge, epsiigeff30y, epsicgeeff30y}`
 - **EM comparators** (used by the EM baseline charts in the deck):
   `EM_Model_HumanCapital_{epsiig, epsicge, epsiigeff25y, epsiigeff30y,
   epsicgeeff25y, epsicgeeff30y}`
 
 Pre-computed results (`models/<name>/Output/<name>_results.mat`) are bundled,
-so the charts can be rebuilt without re-running MATLAB/Dynare.
+so the charts can be rebuilt without re-running MATLAB/Dynare. After changing
+any `*_parameters.macro` or `*_efficiency.macro` file, rerun the model and
+export steps before rebuilding charts.
 
 ## Layout
 
@@ -41,8 +43,9 @@ docs/
    run('drivers/runModel.m')        % regenerates models/<name>/Output/*.mat
    ```
 
-   `runModel.m` runs the 10 variants listed in its `modelList`. A benign
-   exit-time segfault after all models complete is expected.
+   `runModel.m` runs the 10 variants listed in its `modelList`. To regenerate
+   only the four Jamaica variants, run `drivers/runModelJamaica.m` instead. A
+   benign exit-time segfault after all models complete is expected.
 
 2. **Export the figure numbers** (MATLAB + IRIS):
 

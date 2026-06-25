@@ -3,8 +3,8 @@ Line chart (Jamaica case deck): Jamaica output gains from expenditure
 reallocation (solid) and the overall gains when Jamaica's own
 spending-efficiency gap is additionally closed by 2040 (dashed), for
 infrastructure and human capital. Jamaica companion to
-plotCombinedEMLines.py: EM parameters with Jamaica-specific efficiency
-gaps (JAM_efficiency.macro).
+plotCombinedEMLines.py: Jamaica parameters with Jamaica-specific
+efficiency gaps.
 """
 import pandas as pd
 import plotly.graph_objects as go
@@ -17,23 +17,16 @@ from fiscal_common import (
 )
 
 
-# (label, scenario column, color, dash)
+# (legend label, scenario column, color, dash)
 SERIES = [
-    ("Infrastructure: reallocation",
+    ("Infrastructure reallocation",
      "JAM_Model_HumanCapital_epsiig___yd", "#1565C0", "solid"),
-    ("Human capital: reallocation",
+    ("Human capital reallocation",
      "JAM_Model_HumanCapital_epsicge___yd", "#6A1B9A", "solid"),
-    ("Infrastructure: reallocation and efficiency by 2040",
+    ("Infrastructure + efficiency",
      "JAM_Model_HumanCapital_epsiigeff30y___yd", "#1565C0", "dash"),
-    ("Human capital: reallocation and efficiency by 2040",
+    ("Human capital + efficiency",
      "JAM_Model_HumanCapital_epsicgeeff30y___yd", "#6A1B9A", "dash"),
-]
-
-# Legend shows the dash styles only (grey); colors follow the deck's
-# convention: blue infrastructure, purple human capital.
-LEGEND_ENTRIES = [
-    ("Reallocation", "solid"),
-    ("Reallocation + efficiency (by 2040)", "dash"),
 ]
 
 FIRST_YEAR = 2025
@@ -70,24 +63,12 @@ def main():
                 name=label,
                 mode="lines",
                 line=dict(color=color, width=chart_cfg["line_widths"]["standard"], dash=dash),
-                showlegend=False,
-            )
-        )
-
-    legend_color = chart_cfg["colors"].get("neutral", "#757575")
-    for label, dash in LEGEND_ENTRIES:
-        fig.add_trace(
-            go.Scatter(
-                x=[None], y=[None],
-                name=label,
-                mode="lines",
-                line=dict(color=legend_color, width=chart_cfg["line_widths"]["standard"], dash=dash),
                 showlegend=True,
             )
         )
 
     margins = dict(chart_cfg["margins"])
-    margins["t"] = 60
+    margins["t"] = 82
 
     fig.update_layout(
         template=chart_cfg["template"],
@@ -101,7 +82,8 @@ def main():
             y=chart_cfg["legend"]["y"],
             xanchor=chart_cfg["legend"]["xanchor"],
             x=chart_cfg["legend"]["x"],
-            font=dict(size=chart_cfg["legend"]["font_size"]),
+            font=dict(size=12),
+            itemwidth=30,
         ),
     )
 

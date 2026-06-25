@@ -26,7 +26,7 @@ cd(fullfile(project_path, 'models'));
 % +---------+------------------------------+----------------------------------------------------+
 
 %% model list: {name, params, efficiency, shocks}
-% The params entry names a parameter set ('AE' or 'EM') and the efficiency
+% The params entry names a parameter set ('AE', 'EM' or 'JAM') and the efficiency
 % entry an efficiency-gap set ('AE', 'EMnorm', 'EMlow' or 'JAM'). The model is
 % preprocessed with -DparamFile="<params>_parameters.macro" and
 % -DeffFile="<efficiency>_efficiency.macro", which the shared template
@@ -52,9 +52,10 @@ cd(fullfile(project_path, 'models'));
 % models/postSimul.mod.
 %
 % Jamaica case deck (docs/2026-06_Jamaica-case): this repo carries only the
-% models the deck plots -- the four Jamaica scenarios plus the six EM
-% comparators used in the EM baseline charts. The full 48-model list lives
-% in the parent 2025-05_spendingModelling repo.
+% models the deck plots -- the four Jamaica scenarios using JAM parameters
+% and JAM efficiency gaps, plus the six EM comparators used in the EM
+% baseline charts. The full 48-model list lives in the parent
+% 2025-05_spendingModelling repo.
 
 modelList = {
     'EM_Model_HumanCapital_epsiig',             'EM', 'EMnorm', {{'epsi_ig',      'const', 0.01,  '1:1000'}}
@@ -67,11 +68,11 @@ modelList = {
                                                                  {'epsi_effge',   'ramp',  0.320, '1:60'}}
     'EM_Model_HumanCapital_epsicgeeff25y',      'EM', 'EMnorm', {{'epsi_cge',     'const', 0.01,  '1:1000'}
                                                                  {'epsi_effge',   'ramp',  0.320, '1:100'}}
-    'JAM_Model_HumanCapital_epsiig',            'EM', 'JAM',    {{'epsi_ig',      'const', 0.01,  '1:1000'}}
-    'JAM_Model_HumanCapital_epsicge',           'EM', 'JAM',    {{'epsi_cge',     'const', 0.01,  '1:1000'}}
-    'JAM_Model_HumanCapital_epsiigeff30y',      'EM', 'JAM',    {{'epsi_ig',      'const', 0.01,  '1:1000'}
+    'JAM_Model_HumanCapital_epsiig',            'JAM', 'JAM',   {{'epsi_ig',      'const', 0.01,  '1:1000'}}
+    'JAM_Model_HumanCapital_epsicge',           'JAM', 'JAM',   {{'epsi_cge',     'const', 0.01,  '1:1000'}}
+    'JAM_Model_HumanCapital_epsiigeff30y',      'JAM', 'JAM',   {{'epsi_ig',      'const', 0.01,  '1:1000'}
                                                                  {'epsi_eff',     'ramp',  0.415, '1:60'}}
-    'JAM_Model_HumanCapital_epsicgeeff30y',     'EM', 'JAM',    {{'epsi_cge',     'const', 0.01,  '1:1000'}
+    'JAM_Model_HumanCapital_epsicgeeff30y',     'JAM', 'JAM',   {{'epsi_cge',     'const', 0.01,  '1:1000'}
                                                                  {'epsi_effge',   'ramp',  0.3665, '1:60'}}
     };
 
